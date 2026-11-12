@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Snake</h1>
+
+        <form id="ustawienia">
+            <label>
+                Szerokość
+                <input type="number" id="szerokosc" min="5" max="40" value="20" required>
+            </label>
+            <span class="razy">×</span>
+            <label>
+                Wysokość
+                <input type="number" id="wysokosc" min="5" max="40" value="15" required>
+            </label>
+            <label>
+                Prędkość
+                <select id="predkosc">
+                    <option value="170">wolno</option>
+                    <option value="115" selected>normalnie</option>
+                    <option value="75">szybko</option>
+                </select>
+            </label>
+            <button type="submit">Start</button>
+        </form>
+
+        <div id="panel">
+            <div>Punkty <b id="punkty">0</b></div>
+            <div>Długość <b id="dlugosc">0</b></div>
+            <div>Rekord <b id="rekord">0</b></div>
+        </div>
+
+        <div id="kontener">
+            <canvas id="plansza" width="600" height="450"></canvas>
+            <div id="komunikat" class="widoczny">Ustaw wymiary planszy i kliknij <b>Start</b></div>
+        </div>
+
+        <ul id="legenda">
+            <li><i style="background: #ff4d4d"></i> jabłko <b class="plus">+1</b></li>
+            <li><i style="background: #ffd23f"></i> złote jabłko <b class="plus">+5</b>, znika po chwili</li>
+            <li><i style="background: #b05cff"></i> trucizna <b class="minus">−3</b>, wąż się skraca</li>
+        </ul>
+
+        <p class="sterowanie">
+            Strzałki / WASD – sterowanie • Spacja – pauza<br>
+            Ściany są przechodnie, a ugryzienie samego siebie przecina węża na pół
+        </p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
